@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./App.css";
 
 export default function Calendar(props) {
   const [selectedMonth, setSelectedMonth] = useState(new Date());
@@ -101,9 +102,10 @@ export default function Calendar(props) {
   };
 
   let calendar_html = (
-    <table style={{ backgroundColor: "666699", color: "ffffff" }}>
+    <table><div className= 'table'>
       <thead>
-        <tr>
+        <tr><div className= 'header'>
+
           <td>
             <button onClick={() => changeMonth("prev")}>Prev</button>
           </td>
@@ -125,9 +127,11 @@ export default function Calendar(props) {
           {weekDays.map((d) => (
             <td>{d}</td>
           ))}
+          </div>
         </tr>
       </thead>
-      <tbody>{getDays()}</tbody>
+      <tbody><div className='dates'>{getDays()}</div></tbody>
+      </div>
     </table>
   );
 
